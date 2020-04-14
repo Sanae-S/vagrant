@@ -13,10 +13,14 @@ class TodolistsController < ApplicationController
   	redirect_to '/top'
   end
 
+  def index
+  end
+
+  
   private
 
   def list_parpams
   	parpams.require(:list).permit(:title, :body)
   end
-  
+
 end
