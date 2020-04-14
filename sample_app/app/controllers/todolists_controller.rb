@@ -20,10 +20,17 @@ class TodolistsController < ApplicationController
   def show
     @list = List.find(params[:id])
   end
-
+# 3−7 編集対象のデータをviewに渡す
   def edit
     @list = List.find(params[:id])
   end
+# 3-7 編集内容を保存して送信
+def update
+  list = List.find(params[:id])
+  list.update(list_params)
+  redirect_to todolist_path(list.id)
+end
+
 
   private
 
