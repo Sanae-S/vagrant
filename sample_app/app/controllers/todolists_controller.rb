@@ -5,7 +5,6 @@ class TodolistsController < ApplicationController
 
   # add 3-5
   def create
-
   	list = List.new(list_params)
 
   	list.save
@@ -15,17 +14,16 @@ class TodolistsController < ApplicationController
   end
 
   def index
-  	
     @lists = List.all
-  
   end
 
   def show
-
     @list = List.find(params[:id])
-
   end
 
+  def edit
+    @list = List.find(params[:id])
+  end
 
   private
 
