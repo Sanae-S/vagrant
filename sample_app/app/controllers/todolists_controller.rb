@@ -6,7 +6,7 @@ class TodolistsController < ApplicationController
   # add 3-5
   def create
 
-  	list = List.new(list_parpams)
+  	list = List.new(list_params)
 
   	list.save
 
@@ -14,7 +14,15 @@ class TodolistsController < ApplicationController
   end
 
   def index
-  	@lists = List.all
+  	
+    @lists = List.all
+  
+  end
+
+  def show
+
+    @list = List.find(paramas[:id])
+
   end
 
 
