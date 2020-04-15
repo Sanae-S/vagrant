@@ -6,6 +6,7 @@ class BlogsController < ApplicationController
   end
 
   def new
+  	@blog = Blog.new
   end
 
 # 4-3 表示された投稿を保存
