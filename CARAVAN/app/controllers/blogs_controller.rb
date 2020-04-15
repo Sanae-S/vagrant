@@ -6,21 +6,22 @@ class BlogsController < ApplicationController
   end
 
   def new
-  	@blog = Blog.new
+    @blog = Blog.new
   end
 
 # 4-3 表示された投稿を保存
   def create
-  	blog = Blog.new(blog_params)
-  	blog.save
-  	redirect_to blogs_path
+    blog = Blog.new(blog_params)
+    blog.save
+    redirect_to blogs_path
   end
 
   def edit
   end
 
-　private
+  private
+
   def blog_params
-  	params.require(:blog).permit(:title, :category, :body)
+    params.require(:blog).permit(:title, :category, :body)
   end
 end
