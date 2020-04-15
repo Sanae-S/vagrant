@@ -1,8 +1,10 @@
 class BlogsController < ApplicationController
-  def index
+  def show
   end
 
-  def show
+  def index
+    # 記事を全件取得
+    @blogs = Blog.all
   end
 
   def new
