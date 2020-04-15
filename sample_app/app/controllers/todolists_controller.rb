@@ -32,6 +32,9 @@ def update
 end
 # 3-9
 def destroy
+  list = List.find(params[:id])
+  list.destroy
+  redirect_to todolists_path
 end
 
   private
