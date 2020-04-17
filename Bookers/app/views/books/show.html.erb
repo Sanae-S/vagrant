@@ -1,11 +1,17 @@
+<header >
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+</header>
+
 <p>
   <strong>Title:</strong>
-  リーダブルコード
+  <%= @book.title %>
 </p>
 
 <p>
   <strong>Body:</strong>
-  より良いコードを書くために
+  <%= @book.body %>
 </p>
 
-<p>Edit | Back</p>
+<p><%= link_to "Edit", edit_book_path(@book) %> | <%= link_to "Back", books_index_path(@book) %></p>
